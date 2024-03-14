@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>tabuada</title>
+</head>
+
+<body>
+ <header><h1>Tabuada de <span>multiplicação</span></h1>
+</header>
+    <div id="container">
+     
+        <h2>Gerador de tabuada</h2>
+        <input type="number" id="numInput" placeholder="digite um número">
+        <button onclick="geradorTabuada()"> gerar tabuada </button>
+        <div id="tabuada">
+           
+        </div> 
+         <img src="pngwing.com.png" alt="">
+
+
+        <script>
+
+            function geradorTabuada() {
+                var numInput = document.getElementById("numInput").value;
+                var tabuadaDiv = document.getElementById("tabuada");
+                tabuadaDiv.innerHTML = "";
+
+                if (!numInput || isNaN(numInput)) {
+                    tabuadaDiv.innerHTML = "<p> por favor, insira um número válido.</p>"
+                    return;
+                }
+
+                var tableHTML = "<h3>Tabuada do " + numInput + "</h3> <table border='1'> <tr> <th> Número </th> <th> Resultado </th> </tr>";
+
+
+                for (var i = 1; i <= 10; i++) {
+                    tableHTML += "<tr><td>" + numInput + "x" + i + "</td><td>" + (numInput * i) + "</td></tr>";
+                }
+
+
+                tableHTML += "</table>";
+                tabuadaDiv.innerHTML = tableHTML;
+
+            }
+        </script>
+
+         
+
+
+
+
+
+
+
+
+
+      
+
+
+
+    </div>
+
+
+
+
+
+
+
+<footer><p>Desenvolvido por Laiz Borges 03/24</p></footer>
+
+</body>
+
+</html>
